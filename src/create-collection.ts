@@ -1,22 +1,22 @@
-import { dasApi } from "@metaplex-foundation/digital-asset-standard-api";
-import { mplBubblegum } from "@metaplex-foundation/mpl-bubblegum";
-import { createNft } from "@metaplex-foundation/mpl-token-metadata";
+import { dasApi } from "@trezoaplex-foundation/digital-asset-standard-api";
+import { mplBubblegum } from "@trezoaplex-foundation/mpl-bubblegum";
+import { createNft } from "@trezoaplex-foundation/mpl-token-metadata";
 import {
   generateSigner,
   keypairIdentity,
   percentAmount,
-} from "@metaplex-foundation/umi";
-import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
+} from "@trezoaplex-foundation/umi";
+import { createUmi } from "@trezoaplex-foundation/umi-bundle-defaults";
 import {
   getExplorerLink,
   getKeypairFromFile,
-} from "@solana-developers/helpers";
-import { clusterApiUrl } from "@solana/web3.js";
+} from "@trezoa-developers/helpers";
+import { clusterApiUrl } from "@trezoa/web3.js";
 
 const umi = createUmi(clusterApiUrl("devnet"));
 
 // load keypair from local file system
-// See https://github.com/solana-developers/helpers?tab=readme-ov-file#get-a-keypair-from-a-keypair-file
+// See https://github.com/trezoa-developers/helpers?tab=readme-ov-file#get-a-keypair-from-a-keypair-file
 const localKeypair = await getKeypairFromFile();
 
 // convert to Umi compatible keypair
@@ -30,7 +30,7 @@ const collectionMint = generateSigner(umi);
 const transaction = createNft(umi, {
   mint: collectionMint,
   name: `My Collection`,
-  uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-nft-collection-offchain-data.json",
+  uri: "https://raw.githubusercontent.com/trezoa-developers/professional-education/main/labs/sample-nft-collection-offchain-data.json",
   sellerFeeBasisPoints: percentAmount(0),
   isCollection: true, // mint as collection NFT
 });

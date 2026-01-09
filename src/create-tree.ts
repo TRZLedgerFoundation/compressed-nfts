@@ -1,17 +1,17 @@
-import { dasApi } from "@metaplex-foundation/digital-asset-standard-api";
-import { createTree, mplBubblegum } from "@metaplex-foundation/mpl-bubblegum";
-import { generateSigner, keypairIdentity } from "@metaplex-foundation/umi";
-import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
+import { dasApi } from "@trezoaplex-foundation/digital-asset-standard-api";
+import { createTree, mplBubblegum } from "@trezoaplex-foundation/mpl-bubblegum";
+import { generateSigner, keypairIdentity } from "@trezoaplex-foundation/umi";
+import { createUmi } from "@trezoaplex-foundation/umi-bundle-defaults";
 import {
   getExplorerLink,
   getKeypairFromFile,
-} from "@solana-developers/helpers";
-import { clusterApiUrl } from "@solana/web3.js";
+} from "@trezoa-developers/helpers";
+import { clusterApiUrl } from "@trezoa/web3.js";
 
 const umi = createUmi(clusterApiUrl("devnet"));
 
 // load keypair from local file system
-// See https://github.com/solana-developers/helpers?tab=readme-ov-file#get-a-keypair-from-a-keypair-file
+// See https://github.com/trezoa-developers/helpers?tab=readme-ov-file#get-a-keypair-from-a-keypair-file
 const localKeypair = await getKeypairFromFile();
 
 // convert to Umi compatible keypair

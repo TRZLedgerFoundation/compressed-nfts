@@ -1,23 +1,23 @@
-import { dasApi } from "@metaplex-foundation/digital-asset-standard-api";
+import { dasApi } from "@trezoaplex-foundation/digital-asset-standard-api";
 import {
   findLeafAssetIdPda,
   LeafSchema,
   mintToCollectionV1,
   mplBubblegum,
   parseLeafFromMintToCollectionV1Transaction,
-} from "@metaplex-foundation/mpl-bubblegum";
+} from "@trezoaplex-foundation/mpl-bubblegum";
 import {
   keypairIdentity,
   publicKey as UMIPublicKey,
-} from "@metaplex-foundation/umi";
-import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
-import { getKeypairFromFile } from "@solana-developers/helpers";
-import { clusterApiUrl } from "@solana/web3.js";
+} from "@trezoaplex-foundation/umi";
+import { createUmi } from "@trezoaplex-foundation/umi-bundle-defaults";
+import { getKeypairFromFile } from "@trezoa-developers/helpers";
+import { clusterApiUrl } from "@trezoa/web3.js";
 
 const umi = createUmi(clusterApiUrl("devnet"));
 
 // load keypair from local file system
-// See https://github.com/solana-developers/helpers?tab=readme-ov-file#get-a-keypair-from-a-keypair-file
+// See https://github.com/trezoa-developers/helpers?tab=readme-ov-file#get-a-keypair-from-a-keypair-file
 const localKeypair = await getKeypairFromFile();
 
 // convert to Umi compatible keypair
