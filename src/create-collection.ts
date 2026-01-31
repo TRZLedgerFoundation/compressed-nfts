@@ -1,6 +1,6 @@
 import { dasApi } from "@trezoaplex-foundation/digital-asset-standard-api";
-import { mplBubblegum } from "@trezoaplex-foundation/mpl-bubblegum";
-import { createNft } from "@trezoaplex-foundation/mpl-token-metadata";
+import { mplBubblegum } from "@trezoaplex-foundation/tpl-bubblegum";
+import { createNft } from "@trezoaplex-foundation/tpl-token-metadata";
 import {
   generateSigner,
   keypairIdentity,
@@ -22,7 +22,7 @@ const localKeypair = await getKeypairFromFile();
 // convert to Umi compatible keypair
 const umiKeypair = umi.eddsa.createKeypairFromSecretKey(localKeypair.secretKey);
 
-// load the MPL Bubblegum program, dasApi plugin and assign a signer to our umi instance
+// load the TPL Bubblegum program, dasApi plugin and assign a signer to our umi instance
 umi.use(keypairIdentity(umiKeypair)).use(mplBubblegum()).use(dasApi());
 
 const collectionMint = generateSigner(umi);

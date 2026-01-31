@@ -1,5 +1,5 @@
 import { dasApi } from "@trezoaplex-foundation/digital-asset-standard-api";
-import { createTree, mplBubblegum } from "@trezoaplex-foundation/mpl-bubblegum";
+import { createTree, mplBubblegum } from "@trezoaplex-foundation/tpl-bubblegum";
 import { generateSigner, keypairIdentity } from "@trezoaplex-foundation/umi";
 import { createUmi } from "@trezoaplex-foundation/umi-bundle-defaults";
 import {
@@ -17,7 +17,7 @@ const localKeypair = await getKeypairFromFile();
 // convert to Umi compatible keypair
 const umiKeypair = umi.eddsa.createKeypairFromSecretKey(localKeypair.secretKey);
 
-// load the MPL Bubblegum program, dasApi plugin and assign a signer to our umi instance
+// load the TPL Bubblegum program, dasApi plugin and assign a signer to our umi instance
 umi.use(keypairIdentity(umiKeypair)).use(mplBubblegum()).use(dasApi());
 
 const merkleTree = generateSigner(umi);

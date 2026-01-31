@@ -1,5 +1,5 @@
 import { dasApi } from "@trezoaplex-foundation/digital-asset-standard-api";
-import { mplBubblegum } from "@trezoaplex-foundation/mpl-bubblegum";
+import { mplBubblegum } from "@trezoaplex-foundation/tpl-bubblegum";
 import {
   keypairIdentity,
   publicKey as UMIPublicKey,
@@ -18,7 +18,7 @@ const localKeypair = await getKeypairFromFile();
 // convert to Umi compatible keypair
 const umiKeypair = umi.eddsa.createKeypairFromSecretKey(localKeypair.secretKey);
 
-// load the MPL Bubblegum program, dasApi plugin and assign a signer to our umi instance
+// load the TPL Bubblegum program, dasApi plugin and assign a signer to our umi instance
 umi.use(keypairIdentity(umiKeypair)).use(mplBubblegum()).use(dasApi());
 
 const assetId = UMIPublicKey("D4A8TYkKE5NzkqBQ4mPybgFbAUDN53fwJ64b8HwEEuUS");

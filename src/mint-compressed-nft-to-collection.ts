@@ -5,7 +5,7 @@ import {
   mintToCollectionV1,
   mplBubblegum,
   parseLeafFromMintToCollectionV1Transaction,
-} from "@trezoaplex-foundation/mpl-bubblegum";
+} from "@trezoaplex-foundation/tpl-bubblegum";
 import {
   keypairIdentity,
   publicKey as UMIPublicKey,
@@ -23,7 +23,7 @@ const localKeypair = await getKeypairFromFile();
 // convert to Umi compatible keypair
 const umiKeypair = umi.eddsa.createKeypairFromSecretKey(localKeypair.secretKey);
 
-// load the MPL Bubblegum program, dasApi plugin and assign a signer to our umi instance
+// load the TPL Bubblegum program, dasApi plugin and assign a signer to our umi instance
 umi.use(keypairIdentity(umiKeypair)).use(mplBubblegum()).use(dasApi());
 
 const merkleTree = UMIPublicKey("ZwzNxXw83PUmWSypXmqRH669gD3hF9rEjHWPpVghr5h");
